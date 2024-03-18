@@ -21,7 +21,7 @@ body {
   justify-content: center;
 }
 
-.register-field {
+.login-field {
   max-width: 24rem;
   width: 320px;
   margin: 5rem auto;
@@ -41,45 +41,30 @@ header {
   height: 8rem;
 }
 
-.header-title h1 {
-  color: rgba(203, 213, 225, 1);
-  line-height: 2rem;
+.header-title span {
+  color: #fff;
+  font-size: 18px;
   font-weight: 600;
-  font-size: 1.125rem;
+  margin-top: 8px;
 }
 
 .header-title p {
-  color: rgba(203, 213, 225, 1);
-  line-height: 1.5rem;
-  font-size: 0.875rem;
+  color: #cbd5e1;
   margin-top: 0.5rem;
 }
 
 .header-title p a {
   color: #f97316;
   text-decoration: none;
-  line-height: 1.5rem;
 }
 
-.input-field {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.input-accept-rules {
-  display: flex;
-  align-items: center;
-}
-
-.input-accept-rules p {
-  color: rgba(203, 213, 225, 1);
-}
-
-.input-accept-rules p a {
-  color: #f97316;
+.login-valid-info {
+  width: 320px;
+  height: 88px;
+  background: #fef2f2;
+  border-radius: 8px;
+  margin-top: 16px;
+  padding: 16px;
 }
 
 .text-field {
@@ -88,4 +73,22 @@ header {
   color: rgb(255 255 255 / var(--tw-text-opacity));
   border-radius: 0.375rem;
   background: #ffffff0d;
+}
+
+.input-accept-rules {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3px;
+}
+
+.checkbox-text {
+  color: #fff;
+  font-size: 14px;
+  padding-right: 30px;
+}
+
+.input-accept-rules a {
+  color: #f97316;
+  font-size: 14px;
 }
