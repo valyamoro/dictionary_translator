@@ -1,14 +1,38 @@
 package main
 
-import "database/sql"
-import _ "github.com/go-sql-driver/mysql"
+import (
+	"database/sql"
+	_ "github.com/go-sql-driver/mysql"
+	"log"
+	"os"
+)
+
+type application struct {
+	errorLog *log.Logger
+	infoLog  *log.Logger
+}
 
 func main() {
+	errorLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
+	infoLog := log.New(os.Stdout, "INFO\t", log.Ltime|log.Ltime)
+
 	dsn := `root:mysql@tcp(127.0.0.1:3306)/dictionary?parseTime=true`
-	_, err := openDB(dsn)
+	db, err := openDB(dsn)
 	if err != nil {
-		panic(err)
+		errorLog.Fatal(err)
 	}
+
+	err = db.Close()
+	if err != nil {
+		return
+	}
+
+	_ = &application{
+		errorLog: errorLog,
+		infoLog:  infoLog,
+	}
+
+	infoLog.Printf("Starting server")
 }
 
 func openDB(dsn string) (*sql.DB, error) {
