@@ -16,11 +16,7 @@ export default function Register() {
               </div>
             </header>
 
-            <form
-              action="http://localhost:4200/"
-              method="post"
-              className="input-field"
-            >
+            <form method="post" className="input-field">
               <TextField
                 size="small"
                 label="Отображаемое имя"

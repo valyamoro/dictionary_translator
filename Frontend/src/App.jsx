@@ -1,9 +1,10 @@
-import "./App.css";
-import Register from "./pages/register";
+import Login from "../src/pages/login.jsx";
+import Register from "./pages/register.jsx";
+
 function App() {
   return (
     <>
-      <Register />
+      <Login />
     </>
   );
 }
