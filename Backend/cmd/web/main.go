@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"flag"
 	_ "github.com/go-sql-driver/mysql"
 	"log"
 	"os"
@@ -16,8 +17,11 @@ func main() {
 	errorLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 	infoLog := log.New(os.Stdout, "INFO\t", log.Ltime|log.Ltime)
 
-	dsn := `root:mysql@tcp(127.0.0.1:3306)/dictionary?parseTime=true`
-	db, err := openDB(dsn)
+	dsn := flag.String(`dsn`, `root:mysql@tcp(127.0.0.1:3306)/dictionary?parseTime=true`, `MySQL data source name`)
+
+	flag.Parse()
+	
+	db, err := openDB(*dsn)
 	if err != nil {
 		errorLog.Fatal(err)
 	}
