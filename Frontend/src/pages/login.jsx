@@ -1,7 +1,7 @@
 import { Button, TextField, Checkbox } from "@mui/material";
-import "../styles/register.css";
+import "../styles/login.css";
 
-export default function Register() {
+export default function Login() {
   return (
     <>
       <div className="container">
