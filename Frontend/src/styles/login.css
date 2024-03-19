@@ -31,16 +31,6 @@ header {
   text-align: center;
 }
 
-.header-img {
-  display: flex;
-  justify-content: center;
-}
-
-.header-img img {
-  width: 8rem;
-  height: 8rem;
-}
-
 .header-title span {
   color: #fff;
   font-size: 18px;
