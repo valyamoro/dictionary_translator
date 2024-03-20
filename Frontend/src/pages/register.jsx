@@ -20,7 +20,7 @@ export default function Register() {
             </header>
 
             <form method="post" className="input-field">
-              {labelsTextType.map((elememt, index) => (
+              {labelsTextType.map((element, index) => (
                 <TextField
                   size="small"
                   label={labelsTextType[index]}
