@@ -41,3 +41,10 @@ nav {
   justify-content: center;
   gap: 30px;
 }
+
+@media (max-width: 440px) {
+  nav {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
