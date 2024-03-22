@@ -2,6 +2,9 @@ import { Button, TextField, Checkbox } from "@mui/material";
 import "../styles/register.css";
 
 export default function Register() {
+  let labelsTextType = ["Отображаемое имя", "Логин"];
+  let labelsPasswordType = ["Пароль", "Подтверждение пароля"];
+
   return (
     <>
       <div className="container">
@@ -17,34 +20,25 @@ export default function Register() {
             </header>
 
             <form method="post" className="input-field">
-              <TextField
-                size="small"
-                label="Отображаемое имя"
-                variant="outlined"
-                type="text"
-                className="text-field"
-              />
-              <TextField
-                size="small"
-                label="Логин"
-                variant="outlined"
-                type="text"
-                className="text-field"
-              />
-              <TextField
-                size="small"
-                label="Пароль"
-                variant="outlined"
-                type="password"
-                className="text-field"
-              />
-              <TextField
-                size="small"
-                label="Подтверждение пароля"
-                variant="outlined"
-                type="password"
-                className="text-field"
-              />
+              {labelsTextType.map((element, index) => (
+                <TextField
+                  size="small"
+                  label={labelsTextType[index]}
+                  variant="outlined"
+                  type="text"
+                  className="text-field"
+                />
+              ))}
+
+              {labelsPasswordType.map((element, index) => (
+                <TextField
+                  size="small"
+                  label={labelsPasswordType[index]}
+                  variant="outlined"
+                  type="password"
+                  className="text-field"
+                />
+              ))}
 
               <div className="input-accept-rules">
                 <Checkbox
