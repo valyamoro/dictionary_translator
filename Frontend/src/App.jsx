@@ -1,3 +1,7 @@
+
+import Login from "../src/pages/login.jsx";
+import Translator from "./components/translator.jsx";
+
 import { Route, Routes } from "react-router";
 import Layout from "./pages/layout.jsx";
 import Translator from "./components/translator.jsx";
@@ -9,6 +13,9 @@ import Login from "./pages/login.jsx";
 function App() {
   return (
     <>
+
+      <Translator />
+
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Register />}></Route>
@@ -18,6 +25,7 @@ function App() {
           <Route path="/dictionary" element={<Dictionary />}></Route>
         </Route>
       </Routes>
+
     </>
   );
 }
